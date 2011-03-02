@@ -1,0 +1,7 @@
+export(coef.glmnet.cr, cr.backward, cr.forward, nonzero.glmnet.cr, fitted.glmnet.cr, glmnet.cr, select.glmnet.cr, plot.glmnet.cr, predict.glmnet.cr, print.glmnet.cr)
+S3method(print, glmnet.cr)
+S3method(plot, glmnet.cr)
+S3method(fitted, glmnet.cr)
+S3method(predict, glmnet.cr)
+S3method(coef, glmnet.cr)
+
