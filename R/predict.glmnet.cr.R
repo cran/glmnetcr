@@ -63,14 +63,14 @@ function(object,newx=NULL, ...) {
 														 "forward"))] == "backward") {
 			for (h in 1:(j-1)) {
 				if (class(y.mat[,1:h])=="matrix") ylth<-apply(y.mat[,1:h],1,sum) else ylth<-y.mat[,1]
-				LL<- LL + delta[,h]*y.mat[,h+1]+(1-delta[,h])*ylth
+				LL<- LL + log(delta[,h])*y.mat[,h+1]+log(1-delta[,h])*ylth
 			}
 		}
 		if (c("backward", "forward")[charmatch(method, c("backward", 
 														 "forward"))] == "forward") {
 			for (h in 1:(j-1)) {
 				if (class(y.mat[,h:j])=="matrix") ygeh<-apply(y.mat[,h:j],1,sum) else ygeh<-y.mat[,j]
-				LL<- LL + delta[,h]*y.mat[,h]+(1-delta[,h])*ygeh
+				LL<- LL + log(delta[,h])*y.mat[,h]+log(1-delta[,h])*ygeh
 			}
 		}
 		LL<-sum(LL)
