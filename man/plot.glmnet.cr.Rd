@@ -7,7 +7,9 @@ Plots the Regularization Path Computed from glmnet.cr
 This function takes a \code{glmnet.cr} object and visualizes the regularization path. The horizontal axis can be \code{norm}, \code{lambda} or \code{step}. The vertical axis can be \code{coefficients}, \code{aic} or \code{bic}.
 }
 \usage{
-\method{plot}{glmnet.cr}(x, xvar = c("norm", "lambda", "step"), type = c("coefficients", "aic", "bic"), omit.zero = TRUE, breaks = TRUE, mar = NULL, eps = .Machine$double.eps, main = NULL, ...)
+\method{plot}{glmnet.cr}(x, xvar = c("norm", "lambda", "step"), 
+type = c("coefficients", "aic", "bic"), omit.zero = TRUE, breaks = TRUE, mar = NULL, 
+eps = .Machine$double.eps, main = NULL, ...)
 }
 \arguments{
   \item{x}{

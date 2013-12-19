@@ -8,8 +8,9 @@
   shapes of data, including very large sparse data matrices. 
 }
 \usage{
-glmnet.cr(x, y, method = "backward", weights, offset = NULL, alpha = 1, nlambda = 100, lambda.min.ratio = NULL, 
- lambda = NULL, standardize = TRUE, thresh = 1e-04, exclude, penalty.factor = NULL, maxit = 100)
+glmnet.cr(x, y, method = "backward", weights, offset = NULL, alpha = 1, 
+nlambda = 100, lambda.min.ratio = NULL, lambda = NULL, standardize = TRUE,
+thresh = 1e-04,  exclude, penalty.factor = NULL, maxit = 100)
 }
 \arguments{
   \item{x}{
@@ -127,9 +128,13 @@ See Also as \code{\link{glmnet}}, \code{\link{select.glmnet.cr}}, \code{\link{fi
 }
 \examples{
 data(diabetes)
+
 x <- diabetes[, 2:dim(diabetes)[2]]
+
 y <- diabetes$y
+
 glmnet.fit <- glmnet.cr(x, y)
+
 fitted(glmnet.fit, s = select.glmnet.cr(glmnet.fit))
 }
 \keyword{ models }
