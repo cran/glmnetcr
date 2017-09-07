@@ -1,4 +1,4 @@
-print.glmnet.cr <-
+print.glmnetcr <-
 function(x,digits = max(3, getOption("digits") - 3),...){
 	cat("\nCall: ", deparse(x$call), "\n\n")
 	

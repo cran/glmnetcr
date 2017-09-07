@@ -1,5 +1,5 @@
 cr.forward <-
-function (x, y) 
+function (x, y, weights) 
 {
     yname <- as.character(substitute(y))
     if (!is.factor(y)) 
@@ -12,7 +12,7 @@ function (x, y)
         names <- paste("V", 1:dim(x)[2], sep = "")
     expand <- list()
     for (k in 1:kint) {
-        expand[[k]] <- cbind(y[is.element(y, k:(kint + 1))], 
+        expand[[k]] <- cbind(y[is.element(y, k:(kint + 1))], weights[is.element(y, k:(kint + 1))],
             x[is.element(y, k:(kint + 1)), ])
         expand[[k]][, 1] <- ifelse(expand[[k]][, 1] == k, 1, 
             0)
@@ -20,7 +20,7 @@ function (x, y)
         cp[, k] <- 1
         dimnames(cp)[[2]] <- paste("cp", 1:kint, sep = "")
         expand[[k]] <- cbind(expand[[k]], cp)
-        dimnames(expand[[k]])[[2]] <- c("y", names, paste("cp", 
+        dimnames(expand[[k]])[[2]] <- c("y", "weights", names, paste("cp", 
             1:kint, sep = ""))
     }
     newx <- expand[[1]]

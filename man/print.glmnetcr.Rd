@@ -1,16 +1,16 @@
-\name{print.glmnet.cr}
-\alias{print.glmnet.cr}
+\name{print.glmnetcr}
+\alias{print.glmnetcr}
 \title{
-Print a glmnet.cr Object}
+Print a glmnetcr Object}
 \description{
-Print a summary of the \code{glmnet.cr} path at each step along the path.
+Print a summary of the \code{glmnetcr} path at each step along the path.
 }
 \usage{
-\method{print}{glmnet.cr}(x, digits = max(3, getOption("digits") - 3), ...)
+\method{print}{glmnetcr}(x, digits = max(3, getOption("digits") - 3), ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{fitted \code{glmnet.cr} object}
+  \item{x}{fitted \code{glmnetcr} object}
   \item{digits}{significant digits in printout}
   \item{\dots}{additional print arguments}
 }
@@ -28,16 +28,16 @@ Print a summary of the \code{glmnet.cr} path at each step along the path.
   \emph{Regularization Paths for Generalized Linear Models via Coordinate
   Descent}}
 \author{Jerome Friedman, Trevor Hastie and Rob Tibshirani}
-\note{This function is essentially the same as \code{print.glmnet} from the \pkg{glmnet} package by but was edited to operate on a returned \code{glmnet.cr} object.}
+\note{This function is essentially the same as \code{print.glmnet} from the \pkg{glmnet} package by but was edited to operate on a returned \code{glmnetcr} object.}
 
 \seealso{
-See Also as \code{\link{glmnet.cr}}
+See Also as \code{\link{glmnetcr}}
 }
 \examples{
 data(diabetes)
 x <- diabetes[, 2:dim(diabetes)[2]]
 y <- diabetes$y
-glmnet.fit <- glmnet.cr(x, y)
+glmnet.fit <- glmnetcr(x, y)
 print(glmnet.fit)
 }
 \keyword{ methods }

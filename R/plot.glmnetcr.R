@@ -1,4 +1,4 @@
-plot.glmnet.cr <-
+plot.glmnetcr <-
 function(x, xvar = c("norm", "lambda", "step"), type = c("coefficients", 
     "aic", "bic"), omit.zero = TRUE, breaks = TRUE, mar = NULL, eps = .Machine$double.eps, 
     main = NULL, ...)

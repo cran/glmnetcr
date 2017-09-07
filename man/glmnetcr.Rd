@@ -1,5 +1,5 @@
-\name{glmnet.cr}
-\alias{glmnet.cr}
+\name{glmnetcr}
+\alias{glmnetcr}
 \title{Fit a Penalized Constrained Continuation Ratio Model Using Lasso or Elasticnet Regularization Via glmnet}
 \description{
    Fit a constrained continuation ratio model via penalized maximum likelihood.  The
@@ -8,7 +8,7 @@
   shapes of data, including very large sparse data matrices. 
 }
 \usage{
-glmnet.cr(x, y, method = "backward", weights, offset = NULL, alpha = 1, 
+glmnetcr(x, y, method = "backward", weights = NULL, offset = NULL, alpha = 1, 
 nlambda = 100, lambda.min.ratio = NULL, lambda = NULL, standardize = TRUE,
 thresh = 1e-04,  exclude, penalty.factor = NULL, maxit = 100)
 }
@@ -118,13 +118,13 @@ Maximum number of outer-loop iterations for
  \item{method}{returns the continuation ratio method (forward or backward). Useful for \code{predict} and \code{fitted} functions}
 }
 \author{
-Kellie J. Archer, \email{kjarcher@vcu.edu}}
+Kellie J. Archer, \email{archer.43@osu.edu}}
 \note{
 This function depends heavily upon the \code{glmnet} function in the \pkg{glmnet} package written by Jerome Friedman, Trevor Hastie and Rob Tibshirani
 }
 
 \seealso{
-See Also as \code{\link{glmnet}}, \code{\link{select.glmnet.cr}}, \code{\link{fitted.glmnet.cr}}
+See Also as \code{\link{glmnet}}, \code{\link{select.glmnetcr}}, \code{\link{fitted.glmnetcr}}
 }
 \examples{
 data(diabetes)
@@ -133,9 +133,9 @@ x <- diabetes[, 2:dim(diabetes)[2]]
 
 y <- diabetes$y
 
-glmnet.fit <- glmnet.cr(x, y)
+glmnet.fit <- glmnetcr(x, y)
 
-fitted(glmnet.fit, s = select.glmnet.cr(glmnet.fit))
+fitted(glmnet.fit, s = select.glmnetcr(glmnet.fit))
 }
 \keyword{ models }
 \keyword{ classif }

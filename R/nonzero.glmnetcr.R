@@ -1,4 +1,4 @@
-nonzero.glmnet.cr <-
+nonzero.glmnetcr <-
 function(fit,s) {
 	a0<-fit$a0[s]
 	beta<-fit$beta[,s]

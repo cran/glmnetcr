@@ -1,19 +1,19 @@
-\name{plot.glmnet.cr}
-\alias{plot.glmnet.cr}
+\name{plot.glmnetcr}
+\alias{plot.glmnetcr}
 \title{
 Plots the Regularization Path Computed from glmnet.cr
 }
 \description{
-This function takes a \code{glmnet.cr} object and visualizes the regularization path. The horizontal axis can be \code{norm}, \code{lambda} or \code{step}. The vertical axis can be \code{coefficients}, \code{aic} or \code{bic}.
+This function takes a \code{glmnetcr} object and visualizes the regularization path. The horizontal axis can be \code{norm}, \code{lambda} or \code{step}. The vertical axis can be \code{coefficients}, \code{aic} or \code{bic}.
 }
 \usage{
-\method{plot}{glmnet.cr}(x, xvar = c("norm", "lambda", "step"), 
+\method{plot}{glmnetcr}(x, xvar = c("norm", "lambda", "step"), 
 type = c("coefficients", "aic", "bic"), omit.zero = TRUE, breaks = TRUE, mar = NULL, 
 eps = .Machine$double.eps, main = NULL, ...)
 }
 \arguments{
   \item{x}{
-a \code{glmnet.cr} object
+a \code{glmnetcr} object
 }
   \item{xvar}{
 horizontal axis. \code{xvar=norm} plots against the L1 norm of the coefficients (to which L1 norm penalty was applied); \code{xvar=lambda} plots against \eqn{\lambda}; and \code{xvar=step} plots against the number of steps taken. Default is "norm".}
@@ -36,14 +36,14 @@ title of the plot
 other options for the plot}
 }
 \author{
-Kellie J. Archer \email{kjarcher@vcu.edu}
+Kellie J. Archer \email{archer.43@osu.edu}
 }
 \note{
-This function was adapted from the \pkg{glmpath} package by Park and Hastie for a \code{glmnet.cr} object.
+This function was adapted from the \pkg{glmpath} package by Park and Hastie for a \code{glmnetcr} object.
 }
 
 \seealso{
-See also \code{\link{glmnet.cr}}, \code{\link{predict.glmnet.cr}}
+See also \code{\link{glmnetcr}}, \code{\link{predict.glmnetcr}}
 }
 \examples{
 library(glmnetcr)
@@ -51,7 +51,7 @@ data(diabetes)
 x<-diabetes[,2:dim(diabetes)[2]]
 y<-diabetes$y
 summary(y)
-fit<-glmnet.cr(x,y)
+fit<-glmnetcr(x,y)
 plot(fit)
 plot(fit,xvar="step",type="bic")
 }

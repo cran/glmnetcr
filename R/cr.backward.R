@@ -1,5 +1,5 @@
 cr.backward <-
-function (x, y) 
+function (x, y, weights) 
 {
     yname <- as.character(substitute(y))
     if (!is.factor(y)) 
@@ -12,7 +12,7 @@ function (x, y)
         names <- paste("V", 1:dim(x)[2], sep = "")
     expand <- list()
     for (k in 2:(kint + 1)) {
-        expand[[k - 1]] <- cbind(y[is.element(y, 1:k)], x[is.element(y, 
+        expand[[k - 1]] <- cbind(y[is.element(y, 1:k)], weights[is.element(y, 1:k)], x[is.element(y, 
             1:k), ])
         expand[[k - 1]][, 1] <- ifelse(expand[[k - 1]][, 1] == 
             k, 1, 0)
@@ -21,7 +21,7 @@ function (x, y)
         cp[, k - 1] <- 1
         dimnames(cp)[[2]] <- paste("cp", 1:kint, sep = "")
         expand[[k - 1]] <- cbind(expand[[k - 1]], cp)
-        dimnames(expand[[k - 1]])[[2]] <- c("y", names, paste("cp", 
+        dimnames(expand[[k - 1]])[[2]] <- c("y", "weights", names, paste("cp", 
             1:kint, sep = ""))
     }
     newx <- expand[[1]]

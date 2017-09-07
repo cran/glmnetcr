@@ -1,4 +1,4 @@
-coef.glmnet.cr <-
+coef.glmnetcr <-
 function(object,s, ...) {
 	list(a0=object$a0[s],beta=object$beta[,s])
 }

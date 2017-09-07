@@ -1,4 +1,4 @@
-predict.glmnet.cr <-
+predict.glmnetcr <-
 function(object,newx=NULL, ...) {
 	y <- object$y
 	if (is.null(newx)) newx<-object$x
