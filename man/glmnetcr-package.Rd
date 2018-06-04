@@ -7,20 +7,15 @@ Penalized Constrained Continuation Ratio Models for Ordinal Response Prediction 
 \description{
 This package provides a function \code{glmnetcr} for fitting penalized constrained continuation ratio models for predicting an ordinal response and associated methods for plotting, printing, extracting predicted classes and probabilities, and extracting estimated coefficients for selected models in the regularization path. }
 \details{
-\tabular{ll}{
-Package: \tab glmnetcr\cr
-Type: \tab Package\cr
-Version: \tab 1.0.3\cr
-Date: \tab 2017-09-05\cr
-License: \tab GPL2.0\cr
-LazyLoad: \tab yes\cr
-}
+The DESCRIPTION file:
+\packageDESCRIPTION{glmnetcr}
+\packageIndices{glmnetcr}
 This package contains functions for fitting penalized constrained continuation ratio models and extracting estimated coefficients, predicted class, and fitted probabilities. The model and methods can be used when the response to be predicted is ordinal, and is particularly relevant when there are more covariates than observations. 
 }
 \author{
-Kellie J. Archer
+\packageAuthor{glmnetcr} Kellie J. Archer <archer.43@osu.edu>
 
-Maintainer: Kellie J. Archer <archer.43@osu.edu>
+Maintainer: \packageMaintainer{glmnetcr} Kellie J. Archer <archer.43@osu.edu>
 }
 \references{
 Archer K.J., Williams A.A.A. (2012) L1 penalized continuation ratio models for ordinal response prediction using high-dimensional datasets. \emph{Statistics in Medicine}, 31(14), 1464-74.

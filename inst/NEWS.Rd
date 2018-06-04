@@ -8,3 +8,8 @@
   \item Housekeeping: Cleaned up the DESCRIPTION, NAMESPACE, and URLs in help files.
   }
 }
+\section{Changes in version 1.0.4}{
+\itemize{
+   \item Edited glmnetcr-package.Rd to ensure it would be in sync with the rest of the package.
+}
+}
