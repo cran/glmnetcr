@@ -13,3 +13,9 @@
    \item Edited glmnetcr-package.Rd to ensure it would be in sync with the rest of the package.
 }
 }
+\section{Changes in version 1.0.5}{
+\itemize{
+   \item Changed code to be compatible with R 4.0.0 class function returning a vector of length greater than 1 when the object is a matrix.
+   \item Added functionality of additional parameters from glmnet package to glmnetcr call.
+}
+}

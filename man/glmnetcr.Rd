@@ -5,12 +5,15 @@
    Fit a constrained continuation ratio model via penalized maximum likelihood.  The
   regularization path is computed for the lasso or elasticnet penalty at a grid
   of values for the regularization parameter lambda. Can deal with all
-  shapes of data, including very large sparse data matrices. 
+  shapes of data, including very large sparse data matrices.
 }
 \usage{
-glmnetcr(x, y, method = "backward", weights = NULL, offset = NULL, alpha = 1, 
+glmnetcr(x, y, method = "backward", weights = NULL, offset = NULL, alpha = 1,
 nlambda = 100, lambda.min.ratio = NULL, lambda = NULL, standardize = TRUE,
-thresh = 1e-04,  exclude, penalty.factor = NULL, maxit = 100)
+thresh = 1e-04,  exclude, penalty.factor = NULL, maxit = 100,
+dfmax = nvars + 1, pmax = min(dfmax * 2 + 20, nvars),
+type.logistic = c("Newton","modified.Newton"),
+trace.it = 0 )
 }
 \arguments{
   \item{x}{
@@ -45,7 +48,7 @@ Smallest value for \code{lambda}, as a fraction of
   1.}
   \item{lambda}{
 A user supplied \code{lambda} sequence. Typical usage
-    is to have the 
+    is to have the
     program compute its own \code{lambda} sequence based on
     \code{nlambda} and \code{lambda.min.ratio}. Supplying a value of
     \code{lambda} overrides this. WARNING: use with care. Do not supply
@@ -77,6 +80,10 @@ Separate penalty factors can be applied to each
   \item{maxit}{
 Maximum number of outer-loop iterations for
       \code{"binomial"} or \code{"multinomial"} families. Default is 100.}
+   \item{dfmax}{Limit the maximum number of variables in the model. Useful for very large \code{nvars}, if a partial path is desired.}
+   \item{pmax}{Limit the maximum number of variables ever to be nonzero.}
+   \item{type.logistic}{If \code{"Newton"} then the exact hessian is used (default), while \code{"modified.Newton"} uses an upper-bound on the hessian, and can be faster.}
+   \item{trace.it}{If \code{trace.it=1}, then a progress bar is displayed; useful for big models that take a long time to fit.}
 }
 \details{
   The sequence of models implied by \code{lambda} is fit by coordinate
@@ -87,7 +94,7 @@ Maximum number of outer-loop iterations for
   the inverse link functions near a saturated fit. This function invokes \code{glmnet(...,family="binomial")}
   which fits a traditional logistic regression model for the
   log-odds. The
-  penalties take care of redundancies. 
+  penalties take care of redundancies.
 }
 \value{
   \item{call}{the call that produced this object}

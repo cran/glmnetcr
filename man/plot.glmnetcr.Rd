@@ -7,8 +7,8 @@ Plots the Regularization Path Computed from glmnet.cr
 This function takes a \code{glmnetcr} object and visualizes the regularization path. The horizontal axis can be \code{norm}, \code{lambda} or \code{step}. The vertical axis can be \code{coefficients}, \code{aic} or \code{bic}.
 }
 \usage{
-\method{plot}{glmnetcr}(x, xvar = c("norm", "lambda", "step"), 
-type = c("coefficients", "aic", "bic"), omit.zero = TRUE, breaks = TRUE, mar = NULL, 
+\method{plot}{glmnetcr}(x, xvar = c("norm", "lambda", "step"),
+type = c("coefficients", "aic", "bic"), omit.zero = TRUE, breaks = TRUE, mar = NULL,
 eps = .Machine$double.eps, main = NULL, ...)
 }
 \arguments{
@@ -57,5 +57,4 @@ plot(fit,xvar="step",type="bic")
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ Graphics }
