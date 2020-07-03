@@ -73,6 +73,7 @@ The \pkg{glmnetcr} package was written in the \proglang{R} programming environme
 \section{Example}
 The \pkg{glmnetcr} package includes a filtered microarray dataset \code{diabetes} in which asymptomatic males not previously diagnosed with Type II diabetes were enrolled and subsequently were cross-classified as either normal controls ($N=8$), having impaired fasting glucose ($N=7$), or as Type II diabetics ($N=9$) based on a fasting glucose intolerance test. From the code below we can see that the classification variable is stored  as \code{y} in the first column of the \code{diabetes} \code{data.frame}; all subsequent columns are the 11,066 Illumina probes having no negative expression values. In fitting the model we can extract the covariates into an object \code{x} and the ordinal outcome into the object \code{y}. The code for fitting a backward (default) continuation ratio model is given by
 <<echo=FALSE>>=
+old<-options()
 options(prompt="R> ", continue="+  ", width=70, useFancyQuotes=FALSE)
 @
 <<echo=TRUE>>=
@@ -157,7 +158,9 @@ table(hat$class, y)
 
 \section{Summary}
 Herein we have described the \pkg{glmnetcr} package which works in conjunction with the \pkg{glmnet} package in the \proglang{R} programming environment.  The package provides methods for fitting either a forward or backward penalized continuation ratio model. Moreover, the likelihood-based penalized constrained continuation ratios models have been demonstrated to have good performance in simulation studies and when applied to microarray gene expression datasets \citep{Archer}, as well as in comparison to penalized Bayesian continuation ratio models using their encoded sparsity priors \citep{Kiiveri}. A similar package, \pkg{glmpathcr}, which uses the \pkg{glmpath} fitting algorithm for fitting a penalized constrained continuation ratio model has also been developed and is available for download from the Comprehensive \proglang{R} Archive Network. Functions for extracting coefficients, extracting non-zero coefficients, and obtaining fitted probabilities and predicted class in the \pkg{glmpathcr} package follow those in \pkg{glmnetcr} and both packages have similar performance \citep{Archer}. Therefore either the \pkg{glmpathcr} or \pkg{glmnetcr} package should be helpful when predicting an ordinal response for datasets where the number of covariates exceeds the number of available samples. 
-
+<<echo=FALSE>>=
+options(old)
+@
 \section{Acknowledgments}
 This research was supported by the National Institute of Library Medicine through R03LM009347 and R01LM011169.
 

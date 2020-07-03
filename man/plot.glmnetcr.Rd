@@ -1,7 +1,7 @@
 \name{plot.glmnetcr}
 \alias{plot.glmnetcr}
 \title{
-Plots the Regularization Path Computed from glmnet.cr
+Plots the Regularization Path Computed
 }
 \description{
 This function takes a \code{glmnetcr} object and visualizes the regularization path. The horizontal axis can be \code{norm}, \code{lambda} or \code{step}. The vertical axis can be \code{coefficients}, \code{aic} or \code{bic}.

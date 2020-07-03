@@ -1,7 +1,7 @@
 \name{print.glmnetcr}
 \alias{print.glmnetcr}
 \title{
-Print a glmnetcr Object}
+Print a 'glmnetcr' Object}
 \description{
 Print a summary of the \code{glmnetcr} path at each step along the path.
 }

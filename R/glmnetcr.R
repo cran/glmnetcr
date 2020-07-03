@@ -2,15 +2,22 @@ glmnetcr <-
 function (x, y, method = "backward", weights=NULL, offset=NULL,
 alpha = 1, nlambda = 100, lambda.min.ratio=NULL, lambda=NULL,
 standardize = TRUE, thresh = 1e-04,
-exclude, penalty.factor = NULL, maxit=100,
+exclude = NULL, penalty.factor = NULL, maxit=100,
 dfmax = nvars + 1,
 pmax = min(dfmax * 2 + 20, nvars),
 type.logistic = c("Newton","modified.Newton"),
 trace.it = 0 )
 {
     if (length(unique(y))==2) stop("Binary response: Use glmnet with family='binomial' parameter")
+    penalty.factor <- unique(c(penalty.factor, exclude))
     n <- nobs <- dim(x)[1]
     p <- m <- nvars <- dim(x)[2]
+    if (is.null(penalty.factor) & !is.null(exclude)) {
+      penalty.factor<-rep(1,p)
+      penalty.factor[exclude]<-Inf
+    } else if (!is.null(penalty.factor) & !is.null(exclude)) {
+      penalty.factor[exclude]<-Inf
+    }
     k <- length(unique(y))
     x <- as.matrix(x)
 	if (is.null(penalty.factor)) penalty.factor<-rep(1, nvars) else penalty.factor<-penalty.factor

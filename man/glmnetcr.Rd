@@ -1,6 +1,6 @@
 \name{glmnetcr}
 \alias{glmnetcr}
-\title{Fit a Penalized Constrained Continuation Ratio Model Using Lasso or Elasticnet Regularization Via glmnet}
+\title{Fit a Penalized Constrained Continuation Ratio Model Using Lasso or Elasticnet Regularization Via 'glmnet'}
 \description{
    Fit a constrained continuation ratio model via penalized maximum likelihood.  The
   regularization path is computed for the lasso or elasticnet penalty at a grid
@@ -10,7 +10,7 @@
 \usage{
 glmnetcr(x, y, method = "backward", weights = NULL, offset = NULL, alpha = 1,
 nlambda = 100, lambda.min.ratio = NULL, lambda = NULL, standardize = TRUE,
-thresh = 1e-04,  exclude, penalty.factor = NULL, maxit = 100,
+thresh = 1e-04,  exclude = NULL, penalty.factor = NULL, maxit = 100,
 dfmax = nvars + 1, pmax = min(dfmax * 2 + 20, nvars),
 type.logistic = c("Newton","modified.Newton"),
 trace.it = 0 )

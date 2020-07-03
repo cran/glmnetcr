@@ -2,7 +2,7 @@
 \alias{glmnetcr-package}
 \docType{package}
 \title{
-Penalized Constrained Continuation Ratio Models for Ordinal Response Prediction using glmnet
+Penalized Constrained Continuation Ratio Models for Ordinal Response Prediction using 'glmnet'
 }
 \description{
 This package provides a function \code{glmnetcr} for fitting penalized constrained continuation ratio models for predicting an ordinal response and associated methods for plotting, printing, extracting predicted classes and probabilities, and extracting estimated coefficients for selected models in the regularization path. }
@@ -10,7 +10,7 @@ This package provides a function \code{glmnetcr} for fitting penalized constrain
 The DESCRIPTION file:
 \packageDESCRIPTION{glmnetcr}
 \packageIndices{glmnetcr}
-This package contains functions for fitting penalized constrained continuation ratio models and extracting estimated coefficients, predicted class, and fitted probabilities. The model and methods can be used when the response to be predicted is ordinal, and is particularly relevant when there are more covariates than observations. 
+This package contains functions for fitting penalized constrained continuation ratio models and extracting estimated coefficients, predicted class, and fitted probabilities. The model and methods can be used when the response to be predicted is ordinal, and is particularly relevant when there are more covariates than observations.
 }
 \author{
 \packageAuthor{glmnetcr} Kellie J. Archer <archer.43@osu.edu>
